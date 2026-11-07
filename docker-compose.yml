@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  tech-commons:
+    build: .
+    container_name: tech_commons_app
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - TECH_COMMONS_DB=/app/data/tech_commons.db
+      - GOOGLE_SHEET_ID=1R1Q9qc8DtecND4xfoOzc52HWRBA27gq4ejr5xeWP4ZA
+    volumes:
+      - tech_commons_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  tech_commons_data:

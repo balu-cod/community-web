@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TECH / COMMONS — Build Together</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body class="h-screen overflow-hidden flex flex-col">
+
+  <!-- App Root -->
+  <div id="app" class="relative flex h-screen w-full overflow-hidden">
+    <!-- Overlay Backdrop when Sidebar is open -->
+    <div id="sidebar-backdrop" class="fixed inset-0 bg-slate-900/30 backdrop-blur-[2px] z-20 hidden opacity-0 transition-opacity duration-300 cursor-pointer" data-action="toggle-sidebar"></div>
+
+    <!-- Collapsible Sidebar (Removed from page layout when closed) -->
+    <aside id="sidebar" class="fixed top-0 left-0 bottom-0 h-screen bg-[#182232] text-white flex flex-col justify-between shrink-0 transition-transform duration-300 ease-in-out select-none z-30 overflow-y-auto w-64 shadow-2xl -translate-x-full pointer-events-none">
+      <!-- Populated dynamically -->
+    </aside>
+
+    <!-- Independent Scrollable Main Content Area (Full width when sidebar is closed) -->
+    <div id="main-shell" class="flex-1 flex flex-col min-w-0 h-screen overflow-y-auto overflow-x-hidden transition-all duration-300 ml-0">
+      <!-- Top Header Bar -->
+      <header id="topbar" class="sticky top-0 z-10 bg-[#ECECE9]/90 backdrop-blur-md border-b border-black/5 px-5 md:px-8 py-4 flex items-center justify-between gap-4">
+        <!-- Populated dynamically -->
+      </header>
+
+      <!-- Page Viewport -->
+      <main id="main-view" class="flex-1 px-5 md:px-8 py-6 max-w-[1160px] w-full mx-auto">
+        <!-- Populated dynamically -->
+      </main>
+
+      <!-- Footer Bar -->
+      <footer class="px-5 md:px-8 py-4 border-t border-black/5 text-xs text-slate-500 flex flex-wrap items-center justify-between gap-2 max-w-6xl w-full mx-auto">
+        <div class="flex items-center gap-4">
+          <button type="button" data-action="toast" data-message="Terms & Support documentation opened." class="hover:text-slate-800 transition-colors">Terms &amp; Support</button>
+          <button type="button" data-action="toast" data-message="Privacy Policy opened." class="hover:text-slate-800 transition-colors">Privacy Policy</button>
+        </div>
+        <div class="text-slate-400 font-medium">Designed with Canva</div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Modal Container -->
+  <div id="modal-root" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/45 backdrop-blur-xs p-4">
+    <!-- Populated dynamically -->
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toast-root" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "TECH / COMMONS",
+  "short_name": "TechCommons",
+  "description": "Build Together: Learning paths, community circles, and verified technical standards.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#182232",
+  "theme_color": "#182232"
+}
